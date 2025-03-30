@@ -8,6 +8,7 @@ export interface Post {
   content: string;
   created_at: string;
   image_url: string;
+  avatar_url: string;
 }
 
 const fetchPosts = async (): Promise<Post[]> => {
@@ -38,7 +39,7 @@ export const PostList = () => {
   console.log(data);
 
   return (
-    <div>
+    <div className="flex flex-wrap gap-6 justify-center">
       {data?.map((post, key) => (
         <PostItem post={post} key={key} />
       ))}
